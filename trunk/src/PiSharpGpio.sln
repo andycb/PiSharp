@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSharpGpio", "PiSharpGpio\PiSharpGpio.csproj", "{52B36261-BFA8-4401-A5F3-E923D54ADE1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSharp.LibGpio", "PiSharp.LibGpio\PiSharp.LibGpio.csproj", "{2880BE93-F857-4E19-AF08-94AF812FB3A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSharp.GpioSimulator", "PiSharp.GpioSimulator\PiSharp.GpioSimulator.csproj", "{8EABDDC4-A226-4FFE-8FAE-520438A42DB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52B36261-BFA8-4401-A5F3-E923D54ADE1A}.Debug|x86.ActiveCfg = Debug|x86
+		{52B36261-BFA8-4401-A5F3-E923D54ADE1A}.Debug|x86.Build.0 = Debug|x86
+		{52B36261-BFA8-4401-A5F3-E923D54ADE1A}.Release|x86.ActiveCfg = Release|x86
+		{52B36261-BFA8-4401-A5F3-E923D54ADE1A}.Release|x86.Build.0 = Release|x86
+		{2880BE93-F857-4E19-AF08-94AF812FB3A8}.Debug|x86.ActiveCfg = Debug|x86
+		{2880BE93-F857-4E19-AF08-94AF812FB3A8}.Debug|x86.Build.0 = Debug|x86
+		{2880BE93-F857-4E19-AF08-94AF812FB3A8}.Release|x86.ActiveCfg = Release|x86
+		{2880BE93-F857-4E19-AF08-94AF812FB3A8}.Release|x86.Build.0 = Release|x86
+		{8EABDDC4-A226-4FFE-8FAE-520438A42DB2}.Debug|x86.ActiveCfg = Debug|x86
+		{8EABDDC4-A226-4FFE-8FAE-520438A42DB2}.Debug|x86.Build.0 = Debug|x86
+		{8EABDDC4-A226-4FFE-8FAE-520438A42DB2}.Release|x86.ActiveCfg = Release|x86
+		{8EABDDC4-A226-4FFE-8FAE-520438A42DB2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
