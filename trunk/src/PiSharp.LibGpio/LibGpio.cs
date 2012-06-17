@@ -303,7 +303,7 @@ namespace PiSharp.LibGpio
         {
             switch (pinNumber)
             {
-                case PhysicalPinNumber.Four:
+                case PhysicalPinNumber.Seven:
                     return BroadcomPinNumber.Four;
 
                 case PhysicalPinNumber.Eleven:

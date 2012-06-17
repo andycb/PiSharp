@@ -30,9 +30,9 @@ namespace PiSharp.LibGpio.Entities
         Undefined = 0,
 
         /// <summary>
-        /// GPIO Pin 4
+        /// GPIO Pin 7
         /// </summary>
-        Four = 4,
+        Seven = 7,
 
         /// <summary>
         /// GPIO Pin 11

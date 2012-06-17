@@ -75,6 +75,13 @@ namespace PiSharp.GpioSimulator
         /// <param name="e">The event arguments</param>
         private void Main_Load(object sender, EventArgs e)
         {
+            // Create the temp test dir is it doesn't already exist
+            var path = this.GetGpioPath();
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
             this.fileWatcher = new FileSystemWatcher(this.GetGpioPath());
             this.fileWatcher.IncludeSubdirectories = true;
             this.fileWatcher.Changed += this.FileChanged;
