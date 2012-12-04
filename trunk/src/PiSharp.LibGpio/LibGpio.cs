@@ -241,17 +241,20 @@ namespace PiSharp.LibGpio
 
             var gpioId = string.Format("gpio{0}", (int)pinNumber);
             var filePath = Path.Combine(gpioId, "value");
-            using (var streamReader = new StreamReader(new FileStream(Path.Combine(this.GetGpioPath(), filePath), FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
+            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), filePath), FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
-                var rawValue = streamReader.ReadToEnd();
-                Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', has input value '{1}'", pinNumber, rawValue));
-                if (rawValue == "1")
+                using (var streamReader = new StreamReader(fileStream))
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    var rawValue = streamReader.ReadToEnd().Trim();
+                    Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', has input value '{1}'", pinNumber, rawValue));
+                    if (rawValue == "1")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
         }
@@ -338,9 +341,12 @@ namespace PiSharp.LibGpio
         /// <param name="pinNumber">The pin number to unexport</param>
         private void UnExport(BroadcomPinNumber pinNumber)
         {
-            using (var streamWriter = new StreamWriter(Path.Combine(this.GetGpioPath(), "unexport"), false))
+            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "unexport"), FileMode.Open, FileAccess.Write, FileShare.ReadWrite))
             {
-                streamWriter.Write((int)pinNumber);
+                using (var streamWriter = new StreamWriter(fileStream))
+                {
+                    streamWriter.Write((int)pinNumber);
+                }
             }
 
             Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', un-exported", pinNumber));
@@ -352,16 +358,30 @@ namespace PiSharp.LibGpio
         /// <param name="pinNumber">The pin number to export</param>
         private void Export(BroadcomPinNumber pinNumber)
         {
-            var exportDir = string.Format("gpio{0}", (int)pinNumber);
-            var exportPath = Path.Combine(this.GetGpioPath(), exportDir);
-            if (!Directory.Exists(exportPath))
+            try
             {
-                Directory.CreateDirectory(exportPath);
+                var exportDir = string.Format("gpio{0}", (int)pinNumber);
+                var exportPath = Path.Combine(this.GetGpioPath(), exportDir);
+                if (!Directory.Exists(exportPath))
+                {
+                    Directory.CreateDirectory(exportPath);
+                    File.Create(Path.Combine(exportPath, "value")).Close();
+                }
+            }
+            catch (FileNotFoundException e)
+            { 
+                // Nasty hack - the simulator requires directories to be created first, but the RasPi does not and throws an exception.
+               Debug.WriteLine("Error while creating directory: \n" + e.ToString());
             }
 
-            using (var streamWriter = new StreamWriter(Path.Combine(this.GetGpioPath(), "export"), false))
+            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "export"), FileMode.Truncate, FileAccess.Write, FileShare.ReadWrite))
             {
-                streamWriter.Write((int)pinNumber);
+                
+                using (var streamWriter = new StreamWriter(fileStream))
+                {
+                    streamWriter.Write((int)pinNumber);
+                    streamWriter.Flush();
+                }
             }
 
             Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', been exported", pinNumber));
