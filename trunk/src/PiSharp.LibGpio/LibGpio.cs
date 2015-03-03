@@ -24,15 +24,15 @@ namespace PiSharp.LibGpio
     using System.Diagnostics;
     using System.Globalization;
     using System.IO;
- 
+
     using PiSharp.LibGpio.Entities;
-    
+
     /// <summary>
     /// Library for interfacing with the Raspberry Pi GPIO ports. 
     /// This class is implemented as a singleton - no attempt should be made to instantiate it
     /// </summary>
     public class LibGpio
-    {   
+    {
         /// <summary>
         /// Stores the singleton instance of the class
         /// </summary>
@@ -167,7 +167,7 @@ namespace PiSharp.LibGpio
             {
                 throw new InvalidOperationException("Attempt to output value on un-configured pin");
             }
-            
+
             // Check that the channel is not being used incorrectly
             if (this.directions[pinNumber] == Direction.Input)
             {
@@ -358,7 +358,8 @@ namespace PiSharp.LibGpio
         /// <param name="pinNumber">The pin number to export</param>
         private void Export(BroadcomPinNumber pinNumber)
         {
-            try
+            // The simulator requires directories to be created first, but the RasPi does not and throws an exception.
+            if (this.TestMode || Environment.OSVersion.Platform != PlatformID.Unix)
             {
                 var exportDir = string.Format("gpio{0}", (int)pinNumber);
                 var exportPath = Path.Combine(this.GetGpioPath(), exportDir);
@@ -368,15 +369,10 @@ namespace PiSharp.LibGpio
                     File.Create(Path.Combine(exportPath, "value")).Close();
                 }
             }
-            catch (FileNotFoundException e)
-            { 
-                // Nasty hack - the simulator requires directories to be created first, but the RasPi does not and throws an exception.
-               Debug.WriteLine("Error while creating directory: \n" + e.ToString());
-            }
 
             using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "export"), FileMode.Truncate, FileAccess.Write, FileShare.ReadWrite))
             {
-                
+
                 using (var streamWriter = new StreamWriter(fileStream))
                 {
                     streamWriter.Write((int)pinNumber);
