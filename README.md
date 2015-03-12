@@ -2,7 +2,7 @@
 Raspberry Pi GPIO Library for .NET
 
 
-** Pi# is currently being migrated from from Codeplex. Untill the migration is done, please see the original page https://pisharp.codeplex.com/ **
+**Pi# is currently being migrated from from Codeplex. Untill the migration is done, please see the original page [https://pisharp.codeplex.com/](https://pisharp.codeplex.com/)**
 
 --
 
