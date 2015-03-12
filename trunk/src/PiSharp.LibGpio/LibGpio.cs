@@ -108,11 +108,11 @@ namespace PiSharp.LibGpio
         /// <param name="direction">The direction to configure the pin for</param>
         public void SetupChannel(BroadcomPinNumber pinNumber, Direction direction)
         {
-            var outputName = string.Format("gpio{0}", CultureInfo.InvariantCulture, (int)pinNumber);
+            var outputName = string.Format("gpio{0}", (int)pinNumber);
             var gpioPath = Path.Combine(this.GetGpioPath(), outputName);
 
             // If already exported, unexport it before continuing
-            if (File.Exists(gpioPath))
+            if (Directory.Exists(gpioPath))
             {
                 this.UnExport(pinNumber);
             }
