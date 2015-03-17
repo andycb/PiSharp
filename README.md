@@ -1,6 +1,5 @@
 # PiSharp
 Raspberry Pi GPIO Library for .NET
---
 
 Pi# (pronounced “Pi Sharp”) is a library to expose the GPIO functionality of the Raspberry Pi computer to the C# and Visual Basic.Net languages.
 
