@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\PhysicalPinNumber.cs" />
-    <Compile Include="Entities\RaspberryPinNumber.cs" />
     <Compile Include="Entities\BroadcomPinNumber.cs" />
     <Compile Include="Entities\Direction.cs" />
+    <Compile Include="Entities\GpioLayout.cs" />
     <Compile Include="LibGpio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
