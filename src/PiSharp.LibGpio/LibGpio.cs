@@ -431,6 +431,7 @@ namespace PiSharp.LibGpio
             }
             else if (this.TestMode 
                 || Environment.OSVersion.Platform == PlatformID.MacOSX
+                || Environment.OSVersion.Platform == PlatformID.Unix
                 || ((int)Environment.OSVersion.Platform) == 128) // 128 is used for OSX on for .NET versions <4.0 on Mono, see https://github.com/andycb/PiSharp/issues/3
             {
                 // If we're in Test mode or running on a Mac, use a Unix style test path
