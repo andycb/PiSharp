@@ -341,7 +341,7 @@ namespace PiSharp.LibGpio
         /// <param name="pinNumber">The pin number to unexport</param>
         private void UnExport(BroadcomPinNumber pinNumber)
         {
-            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "unexport"), FileMode.Open, FileAccess.Write, FileShare.ReadWrite))
+            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "unexport"), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
                 using (var streamWriter = new StreamWriter(fileStream))
                 {
@@ -370,7 +370,7 @@ namespace PiSharp.LibGpio
                 }
             }
 
-            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "export"), FileMode.Truncate, FileAccess.Write, FileShare.ReadWrite))
+            using (var fileStream = new FileStream(Path.Combine(this.GetGpioPath(), "export"), FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
             {
 
                 using (var streamWriter = new StreamWriter(fileStream))
