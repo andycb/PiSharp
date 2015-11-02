@@ -82,6 +82,46 @@ namespace PiSharp.LibGpio
         }
 
         /// <summary>
+        /// Closes a GPIO channel
+        /// </summary>
+        /// <param name="pinNumber">The Raspberry Pi pin number to configure</param>
+        public void CloseChannel(RaspberryPinNumber pinNumber)
+        {
+            this.CloseChannel(ConvertToBroadcom(pinNumber));
+        }
+
+        /// <summary>
+        /// Closes a GPIO channel
+        /// </summary>
+        /// <param name="pinNumber">The physical pin number to configure</param>
+        public void CloseChannel(PhysicalPinNumber pinNumber)
+        {
+            this.CloseChannel(ConvertToBroadcom(pinNumber));
+        }
+
+        /// <summary>
+        /// Closes a GPIO channel
+        /// </summary>
+        /// <param name="pinNumber">The Broadcom pin number to configure</param>
+        public void CloseChannel(BroadcomPinNumber pinNumber)
+        {
+            var outputName = string.Format("gpio{0}", (int)pinNumber);
+            var gpioPath = Path.Combine(this.GetGpioPath(), outputName);
+
+            if (Directory.Exists(gpioPath))
+            {
+                this.UnExport(pinNumber);
+
+                // Sets direction back to input.
+                this.SetDirection(pinNumber, Direction.Input);
+            }
+
+            
+
+            Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', configured for use", pinNumber));
+        }
+
+        /// <summary>
         /// Configures a GPIO channel for use
         /// </summary>
         /// <param name="pinNumber">The Raspberry Pi pin number to configure</param>
