@@ -30,9 +30,29 @@ namespace PiSharp.LibGpio.Entities
         Undefined = 0,
 
         /// <summary>
+        /// GPIO Pin 3
+        /// </summary>
+        Three = 3,
+
+        /// <summary>
+        /// GPIO Pin 5
+        /// </summary>
+        Five = 5,
+
+        /// <summary>
         /// GPIO Pin 7
         /// </summary>
         Seven = 7,
+
+        /// <summary>
+        /// GPIO Pin 8
+        /// </summary>
+        Eight = 8,
+
+        /// <summary>
+        /// GPIO Pin 10
+        /// </summary>
+        Ten = 10,
 
         /// <summary>
         /// GPIO Pin 11
@@ -65,8 +85,79 @@ namespace PiSharp.LibGpio.Entities
         Eighteen = 18,
 
         /// <summary>
+        /// GPIO Pin 19
+        /// </summary>
+        Nineteen = 19,
+
+        /// <summary>
+        /// GPIO Pin 21
+        /// </summary>
+        TwentyOne = 21,
+
+        /// <summary>
         /// GPIO Pin 22
         /// </summary>
-        TwentyTwo = 22
+        TwentyTwo = 22,
+
+        /// <summary>
+        /// GPIO Pin 23
+        /// </summary>
+        TwentyThree = 23,
+
+        /// <summary>
+        /// GPIO Pin 24
+        /// </summary>
+        TwentyFour = 24,
+
+        /// <summary>
+        /// GPIO Pin 26
+        /// </summary>
+        TwentySix = 26,
+
+        /// <summary>
+        /// GPIO Pin 29 (B+ and above)
+        /// </summary>
+        TwentyNine = 29,
+
+        /// <summary>
+        /// GPIO Pin 31 (B+ and above)
+        /// </summary>
+        ThirtyOne = 31,
+
+        /// <summary>
+        /// GPIO Pin 32 (B+ and above)
+        /// </summary>
+        ThirtyTwo = 32,
+
+        /// <summary>
+        /// GPIO Pin 33 (B+ and above)
+        /// </summary>
+        ThirtyThree = 33,
+
+        /// <summary>
+        /// GPIO Pin 35 (B+ and above)
+        /// </summary>
+        ThirtyFive = 35,
+
+        /// <summary>
+        /// GPIO Pin 36 (B+ and above)
+        /// </summary>
+        ThirtySix = 36,
+
+        /// <summary>
+        /// GPIO Pin 37 (B+ and above)
+        /// </summary>
+        ThirtySeven = 37,
+
+        /// <summary>
+        /// GPIO Pin 38 (B+ and above)
+        /// </summary>
+        ThirtyEight = 38,
+
+        /// <summary>
+        /// GPIO Pin 40 (B+ and above)
+        /// </summary>
+        Fourty = 40
+
     }
 }
