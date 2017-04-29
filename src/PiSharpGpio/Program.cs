@@ -1,4 +1,7 @@
 ﻿//-----------------------------------------------------------------------
+// <remarks>
+//     2017-04-27 - Modified by James Evans - Converted this project to utilize .Net Core v1.1 
+//</remarks>
 // <copyright file="Program.cs" company="Andrew Bradford">
 //     Copyright (C) 2012 Andrew Bradford
 //
@@ -22,8 +25,8 @@ namespace PiSharpGpio
     using System;
     using System.Threading;
     
-    using PiSharp.LibGpio.Core;
-    using PiSharp.LibGpio.Core.Entities;
+    using PiSharp.LibGpio;
+    using PiSharp.LibGpio.Entities;
 
     /// <summary>
     /// Demo program for the LibGpio library 

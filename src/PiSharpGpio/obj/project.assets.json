@@ -2264,6 +2264,13 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "PiSharp.LibGpio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v1.1",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.1.1"
+        }
       }
     }
   },
@@ -7067,11 +7074,17 @@
         "system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "PiSharp.LibGpio/1.0.0": {
+      "type": "project",
+      "path": "../PiSharp.LibGpio/PiSharp.LibGpio.csproj",
+      "msbuildProject": "../PiSharp.LibGpio/PiSharp.LibGpio.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
-      "Microsoft.NETCore.App >= 1.1.1"
+      "Microsoft.NETCore.App >= 1.1.1",
+      "PiSharp.LibGpio >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7090,7 +7103,11 @@
       ],
       "frameworks": {
         "netcoreapp1.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\dewli\\Source\\Repos\\PiSharp\\src\\PiSharp.LibGpio\\PiSharp.LibGpio.csproj": {
+              "projectPath": "C:\\Users\\dewli\\Source\\Repos\\PiSharp\\src\\PiSharp.LibGpio\\PiSharp.LibGpio.csproj"
+            }
+          }
         }
       }
     },
