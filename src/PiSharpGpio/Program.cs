@@ -22,8 +22,8 @@ namespace PiSharpGpio
     using System;
     using System.Threading;
     
-    using PiSharp.LibGpio;
-    using PiSharp.LibGpio.Entities;
+    using PiSharp.LibGpio.Core;
+    using PiSharp.LibGpio.Core.Entities;
 
     /// <summary>
     /// Demo program for the LibGpio library 

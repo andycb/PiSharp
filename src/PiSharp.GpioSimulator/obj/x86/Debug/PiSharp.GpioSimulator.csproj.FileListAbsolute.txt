@@ -1,0 +1,14 @@
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\Images\LEDOff.png
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\Images\LEDOn.png
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\Images\SwitchOff.png
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\Images\SwitchOn.png
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\PiSharp.GpioSimulator.exe.config
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\PiSharp.GpioSimulator.exe
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\bin\Debug\PiSharp.GpioSimulator.pdb
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.csprojResolveAssemblyReference.cache
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.FrmAbout.resources
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.Main.resources
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.Properties.Resources.resources
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.csproj.GenerateResource.Cache
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.exe
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.GpioSimulator\obj\x86\Debug\PiSharp.GpioSimulator.pdb
