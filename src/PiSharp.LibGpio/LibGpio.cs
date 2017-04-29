@@ -1,4 +1,7 @@
 ﻿//-----------------------------------------------------------------------
+// <remarks>
+//     2017-04-27 - Modified by James Evans - Converted this project to utilize .Net Core v1.1 
+//</remarks>
 // <copyright file="LibGpio.cs" company="Andrew Bradford">
 //     Copyright (C) 2012 Andrew Bradford
 //
@@ -116,7 +119,7 @@ namespace PiSharp.LibGpio
                 this.SetDirection(pinNumber, Direction.Input);
             }
 
-            
+
 
             Debug.WriteLine(string.Format("[PiSharp.LibGpio] Broadcom GPIO number '{0}', configured for use", pinNumber));
         }
@@ -216,7 +219,7 @@ namespace PiSharp.LibGpio
 
             var gpioId = string.Format("gpio{0}", (int)pinNumber);
             var filePath = Path.Combine(gpioId, "value");
-            using (var streamWriter = new StreamWriter(Path.Combine(this.GetGpioPath(), filePath), false))
+            using (var streamWriter = new StreamWriter(File.Open(Path.Combine(GetGpioPath().ToString(), filePath), FileMode.OpenOrCreate)))
             {
                 if (value)
                 {
@@ -399,14 +402,14 @@ namespace PiSharp.LibGpio
         private void Export(BroadcomPinNumber pinNumber)
         {
             // The simulator requires directories to be created first, but the RasPi does not and throws an exception.
-            if (this.TestMode || Environment.OSVersion.Platform != PlatformID.Unix)
+            if (this.TestMode || !System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX))
             {
                 var exportDir = string.Format("gpio{0}", (int)pinNumber);
                 var exportPath = Path.Combine(this.GetGpioPath(), exportDir);
                 if (!Directory.Exists(exportPath))
                 {
                     Directory.CreateDirectory(exportPath);
-                    File.Create(Path.Combine(exportPath, "value")).Close();
+                    File.Create(Path.Combine(exportPath, "value"));
                 }
             }
 
@@ -432,7 +435,7 @@ namespace PiSharp.LibGpio
         {
             var gpioId = string.Format("gpio{0}", (int)pinNumber);
             var filePath = Path.Combine(gpioId, "direction");
-            using (var streamWriter = new StreamWriter(Path.Combine(this.GetGpioPath(), filePath), false))
+            using (var streamWriter = new StreamWriter(File.Open(Path.Combine(GetGpioPath().ToString(), filePath), FileMode.OpenOrCreate)))
             {
                 if (direction == Direction.Input)
                 {
@@ -463,16 +466,12 @@ namespace PiSharp.LibGpio
         /// <returns>The correct path for the IO and mode</returns>
         private string GetGpioPath()
         {
-            if (Environment.OSVersion.Platform == PlatformID.Win32NT || Environment.OSVersion.Platform == PlatformID.Win32Windows
-                || Environment.OSVersion.Platform == PlatformID.Win32S || Environment.OSVersion.Platform == PlatformID.WinCE)
+            if (System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows))
             {
                 // If we're running under Windows, use a Windows format test path
                 return "C:\\RasPiGpioTest";
             }
-            else if (this.TestMode 
-                || Environment.OSVersion.Platform == PlatformID.MacOSX
-                || Environment.OSVersion.Platform == PlatformID.Unix
-                || ((int)Environment.OSVersion.Platform) == 128) // 128 is used for OSX on for .NET versions <4.0 on Mono, see https://github.com/andycb/PiSharp/issues/3
+            else if (this.TestMode || System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX))
             {
                 // If we're in Test mode or running on a Mac, use a Unix style test path
                 return "/tmp/RasPiGpioTest";

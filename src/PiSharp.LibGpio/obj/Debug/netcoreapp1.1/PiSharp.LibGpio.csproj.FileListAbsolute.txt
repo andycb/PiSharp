@@ -1,0 +1,13 @@
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.deps.json
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.AssemblyInfo.cs
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.dll
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.pdb
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.dll
+C:\Git\PiSharp-master\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.pdb
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.deps.json
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.dll
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.pdb
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.csprojResolveAssemblyReference.cache
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.AssemblyInfo.cs
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.dll
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharp.LibGpio\obj\Debug\netcoreapp1.1\PiSharp.LibGpio.pdb
