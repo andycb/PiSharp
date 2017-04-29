@@ -12,3 +12,7 @@ C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\obj\Debug\netcoreapp1.1\PiSh
 C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\obj\Debug\netcoreapp1.1\PiSharpGpio.AssemblyInfo.cs
 C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\obj\Debug\netcoreapp1.1\PiSharpGpio.dll
 C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\obj\Debug\netcoreapp1.1\PiSharpGpio.pdb
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\bin\Debug\netcoreapp1.1\PiSharpGpio.dll
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\bin\Debug\netcoreapp1.1\PiSharpGpio.pdb
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.dll
+C:\Users\dewli\Source\Repos\PiSharp\src\PiSharpGpio\bin\Debug\netcoreapp1.1\PiSharp.LibGpio.pdb
